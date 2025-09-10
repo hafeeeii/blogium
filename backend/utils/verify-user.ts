@@ -2,7 +2,11 @@ import type { Request, Response, NextFunction } from 'express'
 import { errorHandler } from './error.js'
 import jwt, { type JwtPayload } from 'jsonwebtoken'
 
-const verifyUser = (req: Request & { user?: JwtPayload }, res: Response, next: NextFunction) => {
+export interface AuthenticatedRequest extends Request {
+    user?: JwtPayload
+}
+
+export const verifyUser = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
     const token = req.cookies.access_token
 
     if (!token) {

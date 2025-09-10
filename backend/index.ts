@@ -2,15 +2,19 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import { errorMiddleware } from './utils/error.js'
-
-
+import postRoutes from './routes/post.route.js'
+import userRoutes from './routes/auth.route.js'
+import cookieParser from 'cookie-parser'
 dotenv.config()
+
+
 
 const app = express()
 
 // Middlewares
 
 app.use(express.json())
+app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))
 
 const uri = process.env.ATLAS_URI as string // connection string
@@ -32,6 +36,9 @@ mongoose.connect(uri)
 app.get('/', (req, res) => {
     res.send('Hello world!')
 })
+
+app.use('/api', userRoutes)
+app.use('/api/posts', postRoutes)
 
 // Error handling middleware
 
