@@ -1,5 +1,5 @@
 "use client";
-import { mockPost, mockRelatedPosts } from "@/app/post/[slug]/page";
+import { mockPost, mockRelatedPosts } from "@/app/(app)/post/[slug]/page";
 import { formatFullDate } from "@/lib/date";
 import Image from "next/image";
 import Link from "next/link";

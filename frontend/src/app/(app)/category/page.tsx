@@ -2,8 +2,8 @@ export const dynamic = "force-dynamic";
 export const revalidate = 60;
 
 import Link from "next/link";
-import { FullWidthHeader } from "../../components/FullWidthHeader";
 import { mockPost } from "../post/[slug]/page";
+import { FullWidthHeader } from "@/components/FullWidthHeader";
 
 export default async function Page() {
   const result = mockPost;

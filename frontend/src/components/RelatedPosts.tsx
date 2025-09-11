@@ -1,6 +1,6 @@
 "use client";
 
-import { mockRelatedPosts } from "@/app/post/[slug]/page";
+import { mockRelatedPosts } from "@/app/(app)/post/[slug]/page";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import Image from "next/image";
 import Link from "next/link";

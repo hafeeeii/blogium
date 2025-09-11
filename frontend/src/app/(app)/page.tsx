@@ -2,9 +2,9 @@ export const revalidate = 60; // 1 minute
 
 import { BlogPostList } from "@/components/BlogPostList";
 import { PostPagination } from "@/components/PostPagination";
-import { FilterBar } from "../components/FilterBar";
-import { FullWidthHeader } from "../components/FullWidthHeader";
-import { config } from "../config";
+import { FilterBar } from "../../components/FilterBar";
+import { FullWidthHeader } from "../../components/FullWidthHeader";
+import { config } from "../../config";
 
 const { title, description } = config;
 
@@ -69,7 +69,6 @@ export default async function Page(props: {
       <FullWidthHeader
         title={title}
         description={description}
-        className="bg-gradient-to-r from-neutral-200 to-zinc-200"
       />
       <div className="container mx-auto max-w-6xl">
         <FilterBar active="latest" className="my-8" />

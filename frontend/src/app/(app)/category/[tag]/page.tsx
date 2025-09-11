@@ -1,11 +1,12 @@
 export const revalidate = 60; // 1 minute
 
-import { mockPosts } from "@/app/page";
+import { mockPosts } from "@/app/(app)/page";
 import { BlogPostList } from "@/components/BlogPostList";
+import { FilterBar } from "@/components/FilterBar";
+import { FullWidthHeader } from "@/components/FullWidthHeader";
 import { PostPagination } from "@/components/PostPagination";
-import { FilterBar } from "../../../components/FilterBar";
-import { FullWidthHeader } from "../../../components/FullWidthHeader";
-import { config } from "../../../config";
+import { config } from "@/config";
+
 
 export default async function Page(props: {
   searchParams?: Promise<{ query: string; page: string }>;
